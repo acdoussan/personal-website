@@ -32,16 +32,17 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <MuiThemeProvider theme={theme}>
+  <MuiThemeProvider theme={theme}>
+    <Router history={hist}>
+      <Switch>
         {routes.map((route, idx) =>
         {
           return <Route path={route.path} key={idx} component={route.component} />;
         })}
-      </MuiThemeProvider>
-    </Switch>
-  </Router>,
+
+      </Switch>
+    </Router>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 
