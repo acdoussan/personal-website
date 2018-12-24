@@ -5,17 +5,38 @@ import * as serviceWorker from './serviceWorker';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+
 import routes from 'routes/index.js';
 
 const hist = createBrowserHistory();
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#484848',
+      main: '#212121',
+      dark: '#000000',
+      contrastText: '#ffffff',
+    },
+    secondary: {
+      light: '#ffff72',
+      main: '#ffeb3b',
+      dark: '#c8b900',
+      contrastText: '#000000',
+    },
+  },
+});
+
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      {routes.map((route, idx) =>
-      {
-        return <Route path={route.path} key={idx} component={route.component} />;
-      })}
+      <MuiThemeProvider theme={theme}>
+        {routes.map((route, idx) =>
+        {
+          return <Route path={route.path} key={idx} component={route.component} />;
+        })}
+      </MuiThemeProvider>
     </Switch>
   </Router>,
   document.getElementById('root')
