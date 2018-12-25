@@ -7,6 +7,8 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
+import Header from 'components/Header/Header.js';
+
 import routes from 'routes/index.js';
 
 const hist = createBrowserHistory();
@@ -34,17 +36,20 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <Router history={hist}>
-      <Switch>
-        {routes.map((route, idx) =>
-        {
-          return <Route path={route.path} key={idx} component={route.component} />;
-        })}
-
-      </Switch>
+      <div>
+        <Header/>
+        <div style={{marginTop: '75px'}}>
+          <Switch>
+            {routes.map((route, idx) =>
+            {
+              return <Route path={route.path} key={idx} component={route.component} />;
+            })}
+          </Switch>
+        </div>
+      </div>
     </Router>
   </MuiThemeProvider>,
-  document.getElementById('root')
-);
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

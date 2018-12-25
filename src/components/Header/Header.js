@@ -46,7 +46,7 @@ class Header extends Component
           </Button>
           <div className={classes.grow}></div>
           <Tabs
-            value={headerLinks.map((x) => x.title).indexOf(this.props.active)}
+            value={headerLinks.map((x) => x.route).indexOf(this.props.location.pathname)}
             onChange={(evt, value) => this.handleChange(value)}
             className={classes.links}
           >
