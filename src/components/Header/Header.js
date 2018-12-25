@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -33,17 +33,19 @@ class Header extends Component
     return (
       <AppBar color='primary'>
         <Toolbar>
-          <Button variant='contained' color='primary' href='/' className={classes.logo}>
-            <Code className={classes.code}/>
-            <div>
-              <Typography variant='h5' color='inherit'>
-                Adam Doussan
-              </Typography>
-              <Typography variant='subtitle1' color='inherit'>
-                Software Engineer
-              </Typography>
-            </div>
-          </Button>
+          <Link to='/' className={classes.logo}>
+            <Button className={classes.button} color='inherit'>
+              <Code className={classes.code}/>
+              <div>
+                <Typography variant='h5' color='inherit'>
+                  Adam Doussan
+                </Typography>
+                <Typography variant='subtitle1' color='inherit'>
+                  Software Engineer
+                </Typography>
+              </div>
+            </Button>
+          </Link>
           <div className={classes.grow}></div>
           <Tabs
             value={headerLinks.map((x) => x.route).indexOf(this.props.location.pathname)}

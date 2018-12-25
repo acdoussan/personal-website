@@ -1,5 +1,11 @@
 const styles = {
   logo: {
+    display: 'flex',
+    textDecoration: 'none',
+    color: 'white',
+    alignItems: 'center',
+  },
+  button: {
     textTransform: 'unset',
   },
   code: {
