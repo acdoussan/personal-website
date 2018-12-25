@@ -17,7 +17,7 @@ import Code from '@material-ui/icons/Code';
 
 import styles from './HeaderStyles.js'
 
-const headerLinks = [{title: 'Home', route: '/'}];
+const headerLinks = [{title: 'Home', route: '/'}, {title: 'About Me', route: '/about'}];
 
 class Header extends Component
 {
