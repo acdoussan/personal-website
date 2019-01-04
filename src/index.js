@@ -12,7 +12,7 @@ import Header from 'components/Header/Header.js';
 
 import routes from 'routes/index.js';
 
-import 'assets/css/clearStyles.css';
+import 'assets/css/baseStyles.css';
 
 const hist = createBrowserHistory();
 
