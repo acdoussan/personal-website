@@ -6,7 +6,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import cssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from 'components/Header/Header.js';
 
@@ -38,7 +38,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <cssBaseline />
+    <CssBaseline />
     <Router history={hist}>
       <div>
         <Header/>
