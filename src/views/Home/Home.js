@@ -13,7 +13,7 @@ import Desktop from '@material-ui/icons/DesktopWindows';
 import ListIcon from '@material-ui/icons/ListAlt';
 import Web from '@material-ui/icons/Web';
 
-import styles from './LandingPageStyles.js';
+import styles from './HomeStyles.js';
 import overrides from './TypographyOverrides';
 
 const cpu_xs = require('assets/img/cpu_xs.jpg');
