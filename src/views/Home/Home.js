@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
-
 import { withStyles } from '@material-ui/core/styles';
 
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from '@material-ui/core/Grid';
 import MuiTypography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 
 import Desktop from '@material-ui/icons/DesktopWindows';
 import ListIcon from '@material-ui/icons/ListAlt';
 import Web from '@material-ui/icons/Web';
+
+import FeaturedItem from './FeaturedItem.js';
 
 import styles from './HomeStyles.js';
 import overrides from './TypographyOverrides';
@@ -88,85 +86,31 @@ class LandingPage extends Component
           <Grid container spacing={24} justify='center' className={classes.featuredGrid}>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Paper elevation={6}>
-                <ButtonBase
-                  className={classes.featuredElem}
-                  href='https://github.com/acdoussan/react-personal-website'
-                >
-                  <div className={classes.featuredElemTopLiner}></div>
-
-                  <div className={classes.featuredContent}>
-                    <Desktop className={classes.featuredIcon}/>
-
-                    <div className={classes.featuredTitle}>
-                      <Typography variant='h4'>
-                        React Website
-                      </Typography>
-                      <div className={classes.featuredTitleUnderline}></div>
-                    </div>
-
-                    <Typography variant='h5'>
-                      This website, created with React and Material-UI.
-                    </Typography>
-                  </div>
-
-                </ButtonBase>
-              </Paper>
+              <FeaturedItem
+                Icon={Desktop}
+                url='https://github.com/acdoussan/react-personal-website'
+                header='React Website'
+                text='This website, created with React and Material-UI.'
+              />
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Paper elevation={6}>
-                <ButtonBase
-                  className={classes.featuredElem}
-                  href='https://github.com/acdoussan/acdoussan.github.io'
-                >
-                  <div className={classes.featuredElemTopLiner}></div>
-
-                  <div className={classes.featuredContent}>
-                    <Web className={classes.featuredIcon}/>
-
-                    <div className={classes.featuredTitle}>
-                      <Typography variant='h4'>
-                        Old Website
-                      </Typography>
-                      <div className={classes.featuredTitleUnderline}></div>
-                    </div>
-
-                    <Typography variant='h5'>
-                      My old website, created with HTML, CSS, and Javascript.
-                    </Typography>
-                  </div>
-
-                </ButtonBase>
-              </Paper>
+              <FeaturedItem
+                Icon={Web}
+                url='https://github.com/acdoussan/acdoussan.github.io'
+                header='Old Website'
+                text='My old website, created with HTML, CSS, and Javascript.'
+              />
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Paper elevation={6}>
-                <ButtonBase
-                  className={classes.featuredElem}
-                  component={Link}
-                  to='/resume'
-                >
-                  <div className={classes.featuredElemTopLiner}></div>
-
-                  <div className={classes.featuredContent}>
-                    <ListIcon className={classes.featuredIcon}/>
-
-                    <div className={classes.featuredTitle}>
-                      <Typography variant='h4'>
-                        Resume
-                      </Typography>
-                      <div className={classes.featuredTitleUnderline}></div>
-                    </div>
-
-                    <Typography variant='h5'>
-                      My personal resume.
-                    </Typography>
-                  </div>
-
-                </ButtonBase>
-              </Paper>
+              <FeaturedItem
+                Icon={ListIcon}
+                url='/resume'
+                header='Resume'
+                text='My personal resume.'
+                link
+              />
             </Grid>
 
           </Grid>
