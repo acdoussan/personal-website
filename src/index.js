@@ -9,6 +9,7 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from 'components/Header/Header.js';
+import Footer from 'components/Footer/Footer.js';
 
 import routes from 'routes/index.js';
 
@@ -50,7 +51,7 @@ ReactDOM.render(
     <CssBaseline />
     <Router history={hist}>
       <div>
-        <Header/>
+        <Header />
         <div style={{marginTop: '75px'}}>
           <Switch>
             {routes.map((route, idx) =>
@@ -59,6 +60,7 @@ ReactDOM.render(
             })}
           </Switch>
         </div>
+        <Footer />
       </div>
     </Router>
   </MuiThemeProvider>,
