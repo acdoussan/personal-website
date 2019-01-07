@@ -35,7 +35,7 @@ class Footer extends Component
           </Grid>
 
           <Grid item xs={12} sm={6} className={classes.rightFooter}>
-            <ButtonBase component={Link} to={'/home'} className={classes.link}>
+            <ButtonBase component={Link} to={'/'} className={classes.link}>
               <Typography variant='subtitle1' color='inherit'>
                 Home
                 <div className={classes.underline}></div>
