@@ -44,6 +44,7 @@ const theme = createMuiTheme({
       xl: 1920,
     },
   },
+  maxContentWidth: '1700px',
 });
 
 ReactDOM.render(
