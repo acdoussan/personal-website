@@ -3,10 +3,8 @@ const styles = (theme) => {
 
   return ({
     header: {
+      ...theme.flexCenter,
       height: '75px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       width: '100%',
     },
 

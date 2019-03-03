@@ -4,11 +4,9 @@ const styles = (theme) =>
 
   return({
     footer: {
+      ...theme.flexCenter,
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       width: '100%',
       padding: '32px'
     },
@@ -20,9 +18,7 @@ const styles = (theme) =>
 
     leftFooter: {
       [breakpoints.down('xs')]: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        ...theme.flexCenter,
         flexDirection: 'column',
       },
     },

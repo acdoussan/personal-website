@@ -31,6 +31,12 @@ const theme = createMuiTheme({
   },
 
   maxContentWidth: '1700px',
+
+  flexCenter: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default theme;
