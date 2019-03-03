@@ -12,10 +12,12 @@ const styles = (theme) =>
       width: '100%',
       padding: '32px'
     },
+
     container: {
       width: '100%',
-      maxWidth: '1350px',
+      maxWidth: theme.maxContentWidth,
     },
+
     leftFooter: {
       [breakpoints.down('xs')]: {
         display: 'flex',
@@ -24,6 +26,7 @@ const styles = (theme) =>
         flexDirection: 'column',
       },
     },
+
     rightFooter: {
       display: 'flex',
       justifyContent: 'center',
@@ -34,6 +37,7 @@ const styles = (theme) =>
         alignItems: 'center',
       }
     },
+
     link: {
       '&:hover': {
         '& $underline': {
@@ -41,12 +45,13 @@ const styles = (theme) =>
         },
       },
     },
+
     underline: {
       width: '0%',
       height: '1px',
       backgroundColor: theme.palette.primary.contrastText,
       transition: 'width .5s',
-    }
+    },
   });
 };
 
