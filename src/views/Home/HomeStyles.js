@@ -6,22 +6,24 @@ const styles = (theme) =>
     home: {
       width: '100%',
     },
+
     pictureDiv: {
+      ...theme.flexCenter,
       maxHeight: '600px',
       width: '100%',
       overflow: 'hidden',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       position: 'relative',
     },
+
     picture: {
       width: '100%',
     },
+
     image: {
       width: '100%',
       minHeight: '250px',
     },
+
     overlay: {
       position: 'absolute',
       top: '20%',
@@ -36,26 +38,28 @@ const styles = (theme) =>
         left: '5%',
       }
     },
+
     primaryBackground: {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.secondary.contrastText,
       padding: '6px',
     },
+
     secondaryBackground: {
       backgroundColor: theme.palette.primary.dark,
       color: theme.palette.primary.contrastText,
       padding: '6px',
       float: 'left',
     },
+
     featured: {
+      ...theme.flexCenter,
       width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       flexWrap: 'wrap',
       backgroundColor: 'white',
       padding: '16px 16px 32px 16px',
     },
+
     featuredHeader: {
       width: '100%',
       textAlign: 'center',
@@ -67,6 +71,7 @@ const styles = (theme) =>
         margin: '16px 0px 32px 0px',
       },
     },
+
     featuredGrid: {
       maxWidth: '1350px',
     },

@@ -67,64 +67,71 @@ class Header extends Component
     return (
       <AppBar color='primary' className={classes.header}>
         <Toolbar className={classes.header}>
-          <Link to='/' className={classes.logo}>
-            <Button className={classes.button} color='inherit'>
-              <Code className={classes.code}/>
-              <div>
-                <Typography variant='h5' color='inherit'>
-                  Adam Doussan
-                </Typography>
-                <Typography variant='subtitle1' color='inherit'>
-                  Software Engineer
-                </Typography>
-              </div>
-            </Button>
-          </Link>
-          <div className={classes.grow}></div>
-          {renderSmall && (
-            <div>
-              <IconButton className={classes.menuButton} onClick={() => this.toggleDrawer(true)}>
-                <Menu />
-              </IconButton>
-              <Drawer open={this.state.drawerIsOpen} onClose={() => this.toggleDrawer(false)} anchor='right'>
-                <div
-                  tabIndex={0}
-                  role="button"
-                  onClick={() => this.toggleDrawer(false)}
-                  onKeyDown={() => this.toggleDrawer(false)}
-                >
-                  <List>
-                    {
-                      headerLinks.map((item, idx) =>
-                      {
-                        return (
-                          <ListItem button key={item.title} onClick={() => this.handleChange(idx)}>
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.title}/>
-                          </ListItem>
-                        );
-                      })
-                    }
-                    <Divider/>
-                  </List>
+          <div className={classes.contentLimit}>
+
+            <Link to='/' className={classes.logo}>
+              <Button className={classes.button} color='inherit'>
+                <Code className={classes.code}/>
+                <div>
+                  <Typography variant='h5' color='inherit'>
+                    Adam Doussan
+                  </Typography>
+                  <Typography variant='subtitle1' color='inherit'>
+                    Software Engineer
+                  </Typography>
                 </div>
-              </Drawer>
-            </div>
-          )}
-          {!renderSmall && (
-            <Tabs
-              value={headerLinks.map((x) => x.route).indexOf(this.props.location.pathname)}
-              onChange={(evt, value) => this.handleChange(value)}
-              className={classes.links}
-            >
-              {
-                headerLinks.map((item, idx) =>
+              </Button>
+            </Link>
+
+            <div className={classes.grow}></div>
+
+            {renderSmall && (
+              <div>
+                <IconButton className={classes.menuButton} onClick={() => this.toggleDrawer(true)}>
+                  <Menu />
+                </IconButton>
+                <Drawer open={this.state.drawerIsOpen} onClose={() => this.toggleDrawer(false)} anchor='right'>
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    onClick={() => this.toggleDrawer(false)}
+                    onKeyDown={() => this.toggleDrawer(false)}
+                  >
+                    <List>
+                      {
+                        headerLinks.map((item, idx) =>
+                        {
+                          return (
+                            <ListItem button key={item.title} onClick={() => this.handleChange(idx)}>
+                              <ListItemIcon>{item.icon}</ListItemIcon>
+                              <ListItemText primary={item.title}/>
+                            </ListItem>
+                          );
+                        })
+                      }
+                      <Divider/>
+                    </List>
+                  </div>
+                </Drawer>
+              </div>
+            )}
+
+            {!renderSmall && (
+              <Tabs
+                value={headerLinks.map((x) => x.route).indexOf(this.props.location.pathname)}
+                onChange={(evt, value) => this.handleChange(value)}
+                className={classes.links}
+              >
                 {
-                  return (<Tab label={item.title} key={idx} />);
-                })
-              }
-            </Tabs>
-          )}
+                  headerLinks.map((item, idx) =>
+                  {
+                    return (<Tab label={item.title} key={idx} />);
+                  })
+                }
+              </Tabs>
+            )}
+
+          </div>
         </Toolbar>
       </AppBar>
     );

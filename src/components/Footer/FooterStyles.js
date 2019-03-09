@@ -4,26 +4,25 @@ const styles = (theme) =>
 
   return({
     footer: {
+      ...theme.flexCenter,
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       width: '100%',
       padding: '32px'
     },
+
     container: {
       width: '100%',
-      maxWidth: '1350px',
+      maxWidth: theme.maxContentWidth,
     },
+
     leftFooter: {
       [breakpoints.down('xs')]: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        ...theme.flexCenter,
         flexDirection: 'column',
       },
     },
+
     rightFooter: {
       display: 'flex',
       justifyContent: 'center',
@@ -34,6 +33,7 @@ const styles = (theme) =>
         alignItems: 'center',
       }
     },
+
     link: {
       '&:hover': {
         '& $underline': {
@@ -41,12 +41,13 @@ const styles = (theme) =>
         },
       },
     },
+
     underline: {
       width: '0%',
       height: '1px',
       backgroundColor: theme.palette.primary.contrastText,
       transition: 'width .5s',
-    }
+    },
   });
 };
 
