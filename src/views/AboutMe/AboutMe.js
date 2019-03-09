@@ -32,6 +32,7 @@ class AboutMe extends Component
         <div className={classNames(classes.entry, classes.me)}>
 
           <Grid container spacing={0} className={classes.entryContent}>
+
             <Grid item xs={12} sm={4} className={classNames(classes.entryPicDiv, classes.meEntryPicDiv)}>
               <img
                 className={classNames(classes.entryPic, classes.meEntryPic)}
@@ -79,6 +80,7 @@ class AboutMe extends Component
         <div className={classes.entry}>
 
           <Grid container spacing={0} className={classes.entryContent}>
+
             <Hidden smUp>
               <Grid item xs={12} className={classes.entryPicDiv}>
                 <img
@@ -138,6 +140,7 @@ class AboutMe extends Component
         <div className={classNames(classes.entry, classes.career)}>
 
           <Grid container spacing={0} className={classes.entryContent}>
+
             <Grid item xs={12} sm={4} className={classes.entryPicDiv}>
               <img
                 className={classes.entryPic}
