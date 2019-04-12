@@ -32,6 +32,8 @@ const theme = createMuiTheme({
 
   maxContentWidth: '1700px',
 
+  headerHeight: '75px',
+
   flexCenter: {
     display: 'flex',
     alignItems: 'center',

@@ -4,7 +4,7 @@ const styles = (theme) => {
   return ({
     header: {
       ...theme.flexCenter,
-      height: '75px',
+      height: theme.headerHeight,
       width: '100%',
     },
 
