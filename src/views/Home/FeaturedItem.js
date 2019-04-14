@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
@@ -14,6 +13,10 @@ import styles from './FeaturedItemStyles.js';
 
 class FeaturedItem extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
   render()
   {
     const { classes, Icon } = this.props;
@@ -24,7 +27,7 @@ class FeaturedItem extends Component
     };
 
     // if this is a local link, use a link component and to
-    if(this.props.link)
+    if (this.props.link)
     {
       buttonBaseProps.component = Link;
       buttonBaseProps.to = this.props.url;
@@ -68,8 +71,8 @@ FeaturedItem.defaultProps = {
   link: false,
 };
 
-// Icon is expected to be a renderable component, string type is to support a native HTML element (Ex: <div>)
-// and func supports native react components.
+// Icon is expected to be a renderable component, string type is to support a native HTML element
+// (Ex: <div>) and func supports native react components.
 FeaturedItem.propTypes = {
   url: PropTypes.string,
   Icon: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

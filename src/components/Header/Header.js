@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { withRouter, Link } from 'react-router-dom';
 
@@ -32,14 +33,21 @@ import overrides from './TypographyOverrides.js';
 const Typography = withStyles(overrides)(MuiTypography);
 
 const headerLinks = [
-  {title: 'Home', icon: <Home/>, route: '/'},
-  {title: 'About Me', icon: <Info/>, route: '/about'},
-  {title: 'Resume', icon: <ListIcon/>, route: '/resume'},
-  {title: 'Projects', icon: <DeveloperBoard/>, route: '/projects'},
+  { title: 'Home', icon: <Home/>, route: '/' },
+  { title: 'About Me', icon: <Info/>, route: '/about' },
+  { title: 'Resume', icon: <ListIcon/>, route: '/resume' },
+  { title: 'Projects', icon: <DeveloperBoard/>, route: '/projects' },
 ];
 
 class Header extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    width: PropTypes.string.isRequired,
+  };
+
   constructor(props)
   {
     super(props);
@@ -49,14 +57,21 @@ class Header extends Component
     };
   }
 
-  handleChange(value)
+  handleChange = (idx) => (evt, value) =>
   {
-    this.props.history.push(headerLinks[value].route);
+    if(!idx) idx = value;
+
+    this.props.history.push(headerLinks[idx].route);
   }
 
-  toggleDrawer(opened)
+  openDrawer = () =>
   {
-    this.setState({drawerIsOpen: opened});
+    this.setState({ drawerIsOpen: true });
+  }
+
+  closeDrawer = () =>
+  {
+    this.setState({ drawerIsOpen: false });
   }
 
   render()
@@ -87,22 +102,30 @@ class Header extends Component
 
             {renderSmall && (
               <div>
-                <IconButton className={classes.menuButton} onClick={() => this.toggleDrawer(true)}>
+                <IconButton className={classes.menuButton} onClick={this.openDrawer}>
                   <Menu />
                 </IconButton>
-                <Drawer open={this.state.drawerIsOpen} onClose={() => this.toggleDrawer(false)} anchor='right'>
+                <Drawer
+                  open={this.state.drawerIsOpen}
+                  onClose={this.closeDrawer}
+                  anchor='right'
+                >
                   <div
                     tabIndex={0}
                     role="button"
-                    onClick={() => this.toggleDrawer(false)}
-                    onKeyDown={() => this.toggleDrawer(false)}
+                    onClick={this.closeDrawer}
+                    onKeyDown={this.closeDrawer}
                   >
                     <List>
                       {
                         headerLinks.map((item, idx) =>
                         {
                           return (
-                            <ListItem button key={item.title} onClick={() => this.handleChange(idx)}>
+                            <ListItem
+                              button
+                              key={item.title}
+                              onClick={this.handleChange(idx)}
+                            >
                               <ListItemIcon>{item.icon}</ListItemIcon>
                               <ListItemText primary={item.title}/>
                             </ListItem>
@@ -119,7 +142,7 @@ class Header extends Component
             {!renderSmall && (
               <Tabs
                 value={headerLinks.map((x) => x.route).indexOf(this.props.location.pathname)}
-                onChange={(evt, value) => this.handleChange(value)}
+                onChange={this.handleChange()}
                 className={classes.links}
               >
                 {

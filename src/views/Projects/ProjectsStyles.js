@@ -12,7 +12,7 @@ const styles = (theme) =>
     paper: {
       padding: '25px',
 
-      [breakpoints.up("md")]: {
+      [breakpoints.up('md')]: {
         padding: '50px',
       },
 
@@ -24,12 +24,12 @@ const styles = (theme) =>
       width: '30px',
       height: '30px',
 
-      [breakpoints.up("sm")]: {
+      [breakpoints.up('sm')]: {
         width: '50px',
         height: '50px',
       },
 
-      [breakpoints.up("md")]: {
+      [breakpoints.up('md')]: {
         width: '75px',
         height: '75px',
       },
@@ -39,11 +39,11 @@ const styles = (theme) =>
       ...theme.flexCenter,
       fontSize: '20px',
 
-      [breakpoints.up("sm")]: {
+      [breakpoints.up('sm')]: {
         fontSize: '26px',
       },
 
-      [breakpoints.up("md")]: {
+      [breakpoints.up('md')]: {
         fontSize: '32px',
       },
     },
@@ -57,6 +57,6 @@ const styles = (theme) =>
       padding: '10px 0px 0px 0px',
     },
   });
-}
+};
 
 export default styles;

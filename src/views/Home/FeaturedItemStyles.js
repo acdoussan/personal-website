@@ -5,6 +5,7 @@ const styles = (theme) =>
       display: 'inline-block',
       width: '100%',
       minHeight: '280px',
+
       '&:hover': {
         '& $featuredTitleUnderline': {
           width: '100%',
@@ -14,7 +15,7 @@ const styles = (theme) =>
     featuredItemTopLiner: {
       backgroundColor: theme.palette.secondary.main,
       height: '8px',
-      marginBottom: '10px'
+      marginBottom: '10px',
     },
     featuredContent: {
       padding: '16px 32px 16px 32px',
@@ -25,10 +26,11 @@ const styles = (theme) =>
       textAlign: 'center',
     },
     featuredIcon: {
-      width: '64px', height: '64px'
+      width: '64px',
+      height: '64px',
     },
     featuredTitle: {
-      margin : '16px 0px 16px 0px',
+      margin: '16px 0px 16px 0px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -41,6 +43,6 @@ const styles = (theme) =>
       transition: 'width .5s',
     },
   });
-}
+};
 
 export default styles;

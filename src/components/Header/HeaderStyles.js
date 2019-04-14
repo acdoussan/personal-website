@@ -1,4 +1,5 @@
-const styles = (theme) => {
+const styles = (theme) =>
+{
   const { breakpoints } = theme;
 
   return ({
@@ -30,7 +31,7 @@ const styles = (theme) => {
       width: '48px',
       height: '48px',
       marginRight: '16px',
-      [breakpoints.down("sm")]: {
+      [breakpoints.down('sm')]: {
         width: '36px',
         height: '36px',
         marginRight: '10px',

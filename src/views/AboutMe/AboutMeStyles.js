@@ -1,4 +1,9 @@
-const styles = (theme) => {
+import bgXS from 'assets/img/bg-xs.jpg';
+import bgSM from 'assets/img/bg-sm.jpg';
+import bgMD from 'assets/img/bg-md.jpg';
+
+const styles = (theme) =>
+{
   const { breakpoints } = theme;
 
   return ({
@@ -10,11 +15,11 @@ const styles = (theme) => {
       ...theme.flexCenter,
       width: '100%',
 
-      [breakpoints.up("sm")]: {
+      [breakpoints.up('sm')]: {
         height: '500px',
       },
 
-      [breakpoints.up("md")]: {
+      [breakpoints.up('md')]: {
         height: '450px',
       },
     },
@@ -30,7 +35,7 @@ const styles = (theme) => {
       ...theme.flexCenter,
       height: '250px',
 
-      [breakpoints.up("sm")]: {
+      [breakpoints.up('sm')]: {
         height: '100%',
       },
     },
@@ -38,7 +43,7 @@ const styles = (theme) => {
     entryPic: {
       width: '200px',
 
-      [breakpoints.up("md")]: {
+      [breakpoints.up('md')]: {
         width: '250px',
       },
     },
@@ -47,7 +52,7 @@ const styles = (theme) => {
       ...theme.flexCenter,
       padding: '10px 30px',
 
-      [breakpoints.up("sm")]: {
+      [breakpoints.up('sm')]: {
         height: '100%',
       },
     },
@@ -73,14 +78,14 @@ const styles = (theme) => {
     me: {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundImage: 'url(' + require('assets/img/bg-xs.jpg') + ')',
+      backgroundImage: `url(${bgXS})`,
 
-      [breakpoints.up("sm")]: {
-        backgroundImage: 'url(' + require('assets/img/bg-sm.jpg') + ')',
+      [breakpoints.up('sm')]: {
+        backgroundImage: `url(${bgSM})`,
       },
 
-      [breakpoints.up("md")]: {
-        backgroundImage: 'url(' + require('assets/img/bg-md.jpg') + ')',
+      [breakpoints.up('md')]: {
+        backgroundImage: `url(${bgMD})`,
       },
     },
 

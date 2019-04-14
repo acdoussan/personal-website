@@ -28,15 +28,15 @@ const styles = (theme) =>
       position: 'absolute',
       top: '20%',
       left: '15%',
-      [breakpoints.down("md")]: {
+      [breakpoints.down('md')]: {
         left: '10%',
       },
-      [breakpoints.down("sm")]: {
+      [breakpoints.down('sm')]: {
         left: '7.5%',
       },
-      [breakpoints.down("xs")]: {
+      [breakpoints.down('xs')]: {
         left: '5%',
-      }
+      },
     },
 
     primaryBackground: {
@@ -64,10 +64,10 @@ const styles = (theme) =>
       width: '100%',
       textAlign: 'center',
       margin: '48px 0px 64px 0px',
-      [breakpoints.down("md")]: {
+      [breakpoints.down('md')]: {
         margin: '32px 0px 48px 0px',
       },
-      [breakpoints.down("sm")]: {
+      [breakpoints.down('sm')]: {
         margin: '16px 0px 32px 0px',
       },
     },
@@ -75,7 +75,7 @@ const styles = (theme) =>
     featuredGrid: {
       maxWidth: '1350px',
     },
-  })
+  });
 };
 
 export default styles;

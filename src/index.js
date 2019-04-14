@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +12,7 @@ import Footer from 'components/Footer/Footer.js';
 
 import routes from 'routes/index.js';
 
-import theme from './theme.js'
+import theme from './theme.js';
 
 import 'assets/css/baseStyles.css';
 
@@ -22,7 +22,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Header />
-        <div style={{marginTop: '75px'}}>
+        <div style={{ marginTop: theme.headerHeight }}>
           <Switch>
             {routes.map((route, idx) =>
             {

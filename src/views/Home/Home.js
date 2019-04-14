@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -14,15 +15,19 @@ import FeaturedItem from './FeaturedItem.js';
 import styles from './HomeStyles.js';
 import overrides from './TypographyOverrides';
 
-const cpu_xs = require('assets/img/cpu_xs.jpg');
-const cpu_sm = require('assets/img/cpu_sm.jpg');
-const cpu_md = require('assets/img/cpu_md.jpg');
-const cpu_lg = require('assets/img/cpu_lg.jpg');
+import cpuXS from 'assets/img/cpu_xs.jpg';
+import cpuSM from 'assets/img/cpu_sm.jpg';
+import cpuMD from 'assets/img/cpu_md.jpg';
+import cpuLG from 'assets/img/cpu_lg.jpg';
 
 const Typography = withStyles(overrides)(MuiTypography);
 
-class LandingPage extends Component
+class Home extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
   render()
   {
     const { classes } = this.props;
@@ -34,27 +39,27 @@ class LandingPage extends Component
           <picture className={classes.picture}>
             <source
               media={'(min-width: 1921px)'}
-              srcSet={cpu_lg}
+              srcSet={cpuLG}
               type={'image/jpeg'}
             />
             <source
               media={'(min-width: 961px)'}
-              srcSet={`${cpu_md} 1x, ${cpu_lg} 2x`}
+              srcSet={`${cpuMD} 1x, ${cpuLG} 2x`}
               type={'image/jpeg'}
             />
             <source
               media={'(min-width: 461px)'}
-              srcSet={`${cpu_sm} 1x, ${cpu_md} 2x`}
+              srcSet={`${cpuSM} 1x, ${cpuMD} 2x`}
               type={'image/jpeg'}
             />
             <source
-              srcSet={`${cpu_xs} 1x, ${cpu_sm} 2x`}
+              srcSet={`${cpuXS} 1x, ${cpuSM} 2x`}
               type={'image/jpeg'}
             />
             <img
               className={classes.image}
-              src={cpu_xs}
-              srcSet={`${cpu_xs} 460w, ${cpu_sm} 960w, ${cpu_md} 1920w, ${cpu_lg} 3840w`}
+              src={cpuXS}
+              srcSet={`${cpuXS} 460w, ${cpuSM} 960w, ${cpuMD} 1920w, ${cpuLG} 3840w`}
               alt={'background of a cpu'}
               type={'image/jpeg'}
             />
@@ -120,4 +125,4 @@ class LandingPage extends Component
   }
 }
 
-export default withStyles(styles)(LandingPage);
+export default withStyles(styles)(Home);

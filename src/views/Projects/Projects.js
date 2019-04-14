@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -11,6 +12,10 @@ import Warning from '@material-ui/icons/WarningRounded';
 
 class Resume extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
   render()
   {
     const { classes } = this.props;
@@ -25,7 +30,9 @@ class Resume extends Component
 
           <Typography variant="subtitle1" className={classes.text}>
             {'For now, check out my Github\u00a0'}
-            <a href='https://github.com/acdoussan' target='_blank' rel='noopener noreferrer'>here</a>
+            <a href='https://github.com/acdoussan' target='_blank' rel='noopener noreferrer'>
+              here
+            </a>
             {'.'}
           </Typography>
         </Paper>

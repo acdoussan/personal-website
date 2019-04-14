@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { Link } from 'react-router-dom';
@@ -11,16 +12,20 @@ import Typography from '@material-ui/core/Typography';
 
 import styles from './AboutMeStyles.js';
 
-const me_1x = require('assets/img/me_1x_even.png');
-const me_2x = require('assets/img/me_2x_even.png');
+import me1x from 'assets/img/me_1x_even.png';
+import me2x from 'assets/img/me_2x_even.png';
 
-const ucf_1x = require('assets/img/ucf-logo_1x.png');
-const ucf_2x = require('assets/img/ucf-logo_2x.png');
+import ucf1x from 'assets/img/ucf-logo_1x.png';
+import ucf2x from 'assets/img/ucf-logo_2x.png';
 
-const harris = require('assets/img/harris.png');
+import harris from 'assets/img/harris.png';
 
 class AboutMe extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
   render()
   {
     const { classes } = this.props;
@@ -33,38 +38,51 @@ class AboutMe extends Component
 
           <Grid container spacing={0} className={classes.entryContent}>
 
-            <Grid item xs={12} sm={4} className={classNames(classes.entryPicDiv, classes.meEntryPicDiv)}>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              className={classNames(classes.entryPicDiv, classes.meEntryPicDiv)}
+            >
               <img
                 className={classNames(classes.entryPic, classes.meEntryPic)}
-                src={me_2x}
-                srcSet={`${me_1x} 1x, ${me_2x} 2x`}
+                src={me2x}
+                srcSet={`${me1x} 1x, ${me2x} 2x`}
                 alt={'of Adam Doussan'}
                 type={'image/png'}
               />
             </Grid>
 
-            <Grid item xs={12} sm={8} className={classNames(classes.entryOuterTextWrapper, classes.meEntryOuterTextWrapper)}>
+            <Grid
+              item
+              xs={12}
+              sm={8}
+              className={classNames(classes.entryOuterTextWrapper, classes.meEntryOuterTextWrapper)}
+            >
               <div className={classes.entryInnerTextWrapper}>
 
                 <div className={classNames(classes.entryHeader, classes.meEntryHeader)}>
                   <Typography variant='h4' color='inherit'>
-                    {"Hi, I'm Adam"}
+                    {'Hi, I\'m Adam'}
                   </Typography>
                 </div>
 
                 <div className={classNames(classes.entryText, classes.meEntryText)}>
                   <Typography variant='body1' color='inherit'>
                     {
-                      "I'm a software engineer from the sunshine state who enjoys a great problem. I " +
-                      "love to create efficent, practical solutions to any challenge that comes my " +
-                      "way, and I am constantly looking for new things to learn and experience. When " +
-                      "I'm not tinkering with my own personal projects, you can find me cruising on my " +
-                      "longboard or playing some games with my friends. Want to know more? Check out my "
+                      'I\'m a software engineer from the sunshine state who enjoys a great ' +
+                      'problem. I love to create efficent, practical solutions to any challenge ' +
+                      'that comes my way, and I am constantly looking for new things to learn ' +
+                      'and experience. When I\'m not tinkering with my own personal projects, ' +
+                      'you can find me cruising on my longboard or playing some games with my ' +
+                      'friends. Want to know more? Check out my '
                     }
-                    <a className={classes.meEntryLinkText} href="https://github.com/acdoussan">github</a>
-                    {", "}
+                    <a className={classes.meEntryLinkText} href="https://github.com/acdoussan">
+                      github
+                    </a>
+                    {', '}
                     <Link className={classes.meEntryLinkText} to="/resume">resume</Link>
-                    {", or contact me directly!"}
+                    {', or contact me directly!'}
                   </Typography>
                 </div>
 
@@ -85,8 +103,8 @@ class AboutMe extends Component
               <Grid item xs={12} className={classes.entryPicDiv}>
                 <img
                   className={classes.entryPic}
-                  src={ucf_2x}
-                  srcSet={`${ucf_1x} 1x, ${ucf_2x} 2x`}
+                  src={ucf2x}
+                  srcSet={`${ucf1x} 1x, ${ucf2x} 2x`}
                   alt={'UCF Logo'}
                   type={'image/png'}
                 />
@@ -105,13 +123,15 @@ class AboutMe extends Component
                 <div className={classes.entryText}>
                   <Typography variant='body1' color='inherit'>
                     {
-                      "I graduated with a Bachelor of Science in Computer Science from the University " +
-                      "of Central Florida (UCF) in May of 2018. While at UCF, I participated in many " +
-                      "extracuricular activities and clubs, including Formula Society of Automotive " +
-                      "Engineers and UCF's competitive programming team. As a part of these activities," +
-                      "I designed a paddle shifting system for a Formula style racecar using an Arduino " +
-                      "microcontroller, and I competed against others to solve as many challenging " +
-                      "programming problems as I could in the shortest amount of time possible."
+                      'I graduated with a Bachelor of Science in Computer Science from the ' +
+                      'University of Central Florida (UCF) in May of 2018. While at UCF, I ' +
+                      'participated in many extracuricular activities and clubs, including ' +
+                      'Formula Society of Automotive Engineers and UCF\'s competitive ' +
+                      'programming team. As a part of these activities, I designed a paddle ' +
+                      'shifting system for a Formula style racecar using an Arduino ' +
+                      'microcontroller, and I competed against others to solve as many ' +
+                      'challenging programming problems as I could in the shortest amount of ' +
+                      'time possible.'
                     }
                   </Typography>
                 </div>
@@ -123,8 +143,8 @@ class AboutMe extends Component
               <Grid item sm={4} className={classNames(classes.entryPicDiv)}>
                 <img
                   className={classNames(classes.entryPic, classes.meEntryPic)}
-                  src={ucf_2x}
-                  srcSet={`${ucf_1x} 1x, ${ucf_2x} 2x`}
+                  src={ucf2x}
+                  srcSet={`${ucf1x} 1x, ${ucf2x} 2x`}
                   alt={'UCF Logo'}
                   type={'image/png'}
                 />
@@ -162,12 +182,13 @@ class AboutMe extends Component
                 <div className={classNames(classes.entryText, classes.careerEntryText)}>
                   <Typography variant='body1' color='inherit'>
                     {
-                      "Currently, I am a software engineer employed at Harris Corporation. As a software " +
-                      "engineer, I am expected to produce quality software that provides a robust, feature " +
-                      "complete solution to a customer need. I am responsible for the software lifecycle " +
-                      "from start to finish, including design, implementation, and documentation. I am " +
-                      "also expected to be in a constant state of improvement and learning to ensure " +
-                      "I am capable of helping the company meet ever changing buisness needs."
+                      'Currently, I am a software engineer employed at Harris Corporation. As a ' +
+                      'software engineer, I am expected to produce quality software that ' +
+                      'provides a robust, feature complete solution to a customer need. I am ' +
+                      'responsible for the software lifecycle from start to finish, including ' +
+                      'design, implementation, and documentation. I am also expected to be in a ' +
+                      'constant state of improvement and learning to ensure I am capable of ' +
+                      'helping the company meet ever changing buisness needs.'
                     }
                   </Typography>
                 </div>

@@ -2,13 +2,13 @@ const styles = (theme) =>
 {
   const { breakpoints } = theme;
 
-  return({
+  return ({
     footer: {
       ...theme.flexCenter,
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
       width: '100%',
-      padding: '32px'
+      padding: '32px',
     },
 
     container: {
@@ -31,7 +31,7 @@ const styles = (theme) =>
       [breakpoints.down('xs')]: {
         marginTop: '16px',
         alignItems: 'center',
-      }
+      },
     },
 
     link: {

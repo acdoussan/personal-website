@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,10 @@ import styles from './FooterStyles.js';
 
 class Footer extends Component
 {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
   render()
   {
     const { classes } = this.props;
