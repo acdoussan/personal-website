@@ -59,7 +59,7 @@ class Header extends Component
 
   handleChange = (idx) => (evt, value) =>
   {
-    if(!idx) idx = value;
+    if (!idx) idx = value;
 
     this.props.history.push(headerLinks[idx].route);
   }
