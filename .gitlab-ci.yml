@@ -1,0 +1,54 @@
+image: node:12.11.0-alpine
+
+stages:
+- init
+- lint
+- test
+- build
+- deploy
+
+init:
+  stage: init
+  script:
+    npm install
+  artifacts:
+    paths:
+      - node_modules
+
+lint:
+  stage: lint
+  script:
+    - node scripts/lint-ci.js
+  artifacts:
+    reports:
+      junit: lint-results.xml
+
+test:
+  stage: test
+  script:
+    - npm run test -- --passWithNoTests --reporters=default --reporters=jest-junit
+  artifacts:
+    reports:
+      junit: junit.xml
+
+coverage:
+  stage: test
+  script:
+    - npm run test -- --passWithNoTests --coverage
+  coverage: '/All files\s*\|\s*([0-9.]+)/'
+  artifacts:
+    paths:
+      - coverage
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build
+
+.deploy:
+  stage: deploy
+  script:
+    - echo "noop"
