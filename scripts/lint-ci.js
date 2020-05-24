@@ -4,7 +4,7 @@ const assert = require('assert');
 
 const cli = new CLIEngine();
 
-const result = cli.executeOnFiles(['.']);
+const result = cli.executeOnFiles(['src']);
 
 const defaultFormatter = cli.getFormatter();
 const junitFormatter = cli.getFormatter('junit');
