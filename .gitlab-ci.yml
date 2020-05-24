@@ -48,7 +48,7 @@ build:
     paths:
       - build
 
-deploy:
+pages:
   stage: deploy
   script:
     - rm -rf public
