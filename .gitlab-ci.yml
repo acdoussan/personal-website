@@ -48,7 +48,11 @@ build:
     paths:
       - build
 
-.deploy:
+deploy:
   stage: deploy
   script:
-    - echo "noop"
+    - rm -rf public
+    - mv build public
+  artifacts:
+    paths:
+      - public
