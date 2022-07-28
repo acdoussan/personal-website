@@ -34,9 +34,6 @@ class Footer extends Component
             <Typography variant='subtitle1' color='inherit'>
               ACDoussan@gmail.com
             </Typography>
-            <Typography variant='subtitle1' color='inherit'>
-              (727) 453-1807
-            </Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} className={classes.rightFooter}>
