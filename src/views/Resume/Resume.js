@@ -10,7 +10,7 @@ import styles from './ResumeStyles.js';
 
 import Warning from '@material-ui/icons/WarningRounded';
 
-import ResumePDF from 'assets/img/Resume.pdf';
+import ResumePDF from 'assets/img/adam-doussan-resume.pdf';
 
 class Resume extends Component
 {
