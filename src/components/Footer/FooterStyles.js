@@ -2,7 +2,7 @@ const styles = (theme) =>
 {
   const { breakpoints } = theme;
 
-  return ({
+  return {
     footer: {
       ...theme.flexCenter,
       backgroundColor: theme.palette.primary.main,
@@ -17,10 +17,30 @@ const styles = (theme) =>
     },
 
     leftFooter: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
       [breakpoints.down('xs')]: {
         ...theme.flexCenter,
-        flexDirection: 'column',
       },
+    },
+
+    buttonContent: {
+      display: 'flex',
+    },
+
+    icon: {
+      marginRight: '8px',
+      display: 'flex',
+      alignItems: 'center',
+    },
+
+    iconImg: {
+      width: '20px',
+      height: '20px',
+      margin: '0px 2px',
+      backgroundColor: 'white',
+      borderRadius: '4px',
     },
 
     rightFooter: {
@@ -48,7 +68,7 @@ const styles = (theme) =>
       backgroundColor: theme.palette.primary.contrastText,
       transition: 'width .5s',
     },
-  });
+  };
 };
 
 export default styles;
