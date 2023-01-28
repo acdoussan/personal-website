@@ -54,7 +54,7 @@ jobs:
         uses: actions/configure-pages@v3
         # https://github.com/actions/configure-pages/issues/40
         with:
-          token: PAGES_PAT
+          token: ${{ secrets.PAGES_PAT }}
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v1
